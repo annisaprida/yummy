@@ -1,4 +1,4 @@
-# vueapp
+# pont
 
 ## Project setup
 ```
@@ -8,17 +8,17 @@ npm install
 ### Compiles and hot-reloads for development
 ```
 npm run serve
+then open http://localhost:8080/ 
 ```
 
-### Compiles and minifies for production
+### run the unit test
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm run test:unit
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### notes
+tested running in my local enviroment.
+```
+node version 14.16.1
+npm version 6.14.12
+```
