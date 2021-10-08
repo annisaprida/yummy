@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    yummy front end assignment
     <tabs @clicked="tabClicked">
         <tab name="My Page">
             <h1>Profile</h1>
