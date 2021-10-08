@@ -1,23 +1,20 @@
 <template>
-  <div id="app">
+  <div id="app" class="color-wheel">
     yummy front end assignment
-    <tabs @clicked="tabClicked">
-        <tab name="My Page">
-            <h1>Profile</h1>
-           <User></User>
-        </tab>
-        <tab name="Appearance">
-            <Appearance></Appearance>
-        </tab>
-    </tabs>
+    <section class="color-wheel__preview" :style="{'background-color': bgColor}">
+    </section>
+     <slider-picker @input="updateValue" v-model="color" />
   </div>
   
 </template>
 
 <script src="./app.js"></script>
 
-<style lang="scss" scoped>
-#app {
+<style lang="scss">
+ html, body{
+  height: 100%;
+}
+.color-wheel {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,46 +25,35 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 15px;
   height: 100%;
-  h1{
-    text-align: left;
+  position: relative;
+  &__preview{
+    width: 200px;
+    height: 200px;
+    background: var(--color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .vc-slider{
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    left: 0;
+    &-swatches{
+      display: none;
+    }
+    &-hue-warp {
+      height: 20px;
+      .vc-hue-picker{
+        width: 20px;
+        height: 20px;
+        border: 2px solid #00bcd4;
+        border-radius: 100%;
+        transform: translate(-7px, -5px);
+      }
+    }
   }
 }
 
-</style>
-
-<style lang="scss">
-  html, body{
-    height: 100%;
-  }
-  .tabs-component-tabs{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style-type: none;
-    li{
-      flex: 50%;
-      padding: 5px;
-      border-radius: 10px;
-      a{
-        text-decoration: none;
-        color: #000;
-        display: block;
-      }
-    }
-    .tabs-component-tab{
-      &.is-active{
-        background:#3d6efd;
-        a{
-          color: #fff
-        }
-      }
-    }
-  }
-  .tabs-component-panel{
-    padding: 0 20px;
-    ul{
-      list-style-type: none;
-      margin: 0;
-    }
-  }
 </style>

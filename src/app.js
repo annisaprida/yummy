@@ -1,19 +1,45 @@
-import {Tabs, Tab} from 'vue-tabs-component';
+import { Slider } from 'vue-color'
 
-import User from './components/User.vue'
-import Appearance from './components/Appearance.vue'
-
+let defaultProps = {
+  hex: '#79D2A6',
+  hsl: {
+    h: 150,
+    s: 0.42,
+    l: 0.82,
+    a: 1
+  },
+  hsv: {
+    h: 150,
+    s: 0.42,
+    v: 0.82,
+    a: 1
+  },
+  rgba: {
+    r: 121,
+    g: 210,
+    b: 166,
+    a: 1
+  },
+  a: 1
+}
 export default {
   name: 'App',
-  components: {
-    User,
-    Appearance,
-    Tabs,
-    Tab
-  },
-  methods: {
-    tabClicked(selectedTab){
-      this.$store.dispatch('setIsSettingUserData', selectedTab.tab.name.toLowerCase() === "appearance")
+  data(){
+    return {
+      color:defaultProps
     }
+  },
+  computed:{
+    bgColor(){
+      return this.color.hex
+    }
+  },
+  methods:{
+    updateValue (value) {
+      this.colors = value
+    }
+  },
+  components: {
+    'slider-picker': Slider,
   }
 }
