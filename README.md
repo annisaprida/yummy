@@ -1,4 +1,4 @@
-# pont
+# yummy take home assignment annisa prida r
 
 ## Project setup
 ```
@@ -8,7 +8,7 @@ npm install
 ### Compiles and hot-reloads for development
 ```
 npm run serve
-then open http://localhost:8080/ 
+then open http://localhost:8080/yummy
 ```
 
 ### run the unit test

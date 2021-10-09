@@ -10,7 +10,9 @@ describe('App.vue', () => {
     const wrapper = shallowMount(App, {
       localVue,
     })
+    wrapper.vm.color.hex = '#000'
     wrapper.vm.updateValue({hex:'#000'})
-    expect(wrapper.vm.colors).toEqual({hex:'#000'})
+    expect(wrapper.vm.color.hex).toBe('#000')
+    expect(wrapper.vm.bgColor).toBe('#000')
   })
 })

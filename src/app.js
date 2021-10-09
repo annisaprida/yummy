@@ -36,7 +36,7 @@ export default {
   },
   methods:{
     updateValue (value) {
-      this.colors = value
+      this.color = value
     }
   },
   components: {
