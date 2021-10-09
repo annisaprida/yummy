@@ -1,5 +1,5 @@
 import { Slider } from 'vue-color'
-
+import PinchZoom from 'vue-pinch-zoom';
 let defaultProps = {
   hex: '#79D2A6',
   hsl: {
@@ -41,5 +41,6 @@ export default {
   },
   components: {
     'slider-picker': Slider,
+    'pinch-zoom': PinchZoom
   }
 }

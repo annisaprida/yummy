@@ -1,9 +1,11 @@
 <template>
   <div id="app" class="color-wheel">
-    yummy front end assignment
-    <section class="color-wheel__preview" :style="{'background-color': bgColor}">
-    </section>
-     <slider-picker @input="updateValue" v-model="color" />
+    <h1>yummy front end assignment</h1>
+    <pinch-zoom :autoHeight="true" >
+      <section class="color-wheel__preview" :style="{'background-color': bgColor}">
+      </section>
+    </pinch-zoom>
+    <slider-picker @input="updateValue" v-model="color" />
   </div>
   
 </template>
@@ -27,13 +29,10 @@
   height: 100%;
   position: relative;
   &__preview{
-    width: 200px;
-    height: 200px;
+    width: 50px;
+    height: 50px;
     background: var(--color);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border-radius: 100%;
   }
   .vc-slider{
     position: fixed;
@@ -53,6 +52,16 @@
         transform: translate(-7px, -5px);
       }
     }
+  }
+  .pinch-zoom-wrapper {
+    height: 200px;
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    background: #fff !important;
+    transform: translate(-50%, -50%);
   }
 }
 
